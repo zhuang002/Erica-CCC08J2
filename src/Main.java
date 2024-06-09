@@ -17,26 +17,34 @@ public class Main {
 
 	private static void doOp(int op, char[] songs) {
 		// TODO Auto-generated method stub
-		if (op==1) {
+		switch (op) {
+		case 1:
 			char c = songs[0];
 			for (int i=0;i<songs.length-1;i++) {
 				songs[i]=songs[i+1];
 			}
 			songs[4] = c;
-		} else if (op==2) {
-			char c = songs[songs.length-1];
+			break;
+		case 2:
+			c = songs[songs.length-1];
 			for (int i=songs.length-1;i>=1;i--) {
 				songs[i]=songs[i-1];
 			}
 			songs[0]=c;
-		} else if (op==3) {
-			char c = songs[0];
+			break;
+		case 3:
+			c = songs[0];
 			songs[0] = songs[1];
 			songs[1] = c;
-		} else if (op==4) {
+			break;
+		case 4:
 			for (int i=0;i<songs.length;i++) {
 				System.out.print(songs[i]+" ");
 			}
+			break;
+		default:
+			System.out.println("Invalid operation");
+			break;
 		}
 	}
 
